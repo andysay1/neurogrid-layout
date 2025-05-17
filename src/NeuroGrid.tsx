@@ -8,7 +8,7 @@ export const NeuroGrid = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         if (!gridRef.current) return;
 
-        const blocks = Array.from(gridRef.current.querySelectorAll('.block')) as HTMLElement[];
+        const blocks = Array.from(gridRef.current.querySelectorAll('.neuro-block')) as HTMLElement[];
 
         const autoAssignSize = () => {
             blocks.forEach((block) => {
@@ -78,7 +78,7 @@ export const NeuroGrid = ({ children }: { children: ReactNode }) => {
     }, []);
 
     return (
-        <div className='grid' ref={gridRef}>
+        <div className='neuro-grid' ref={gridRef}>
             {children}
         </div>
     );

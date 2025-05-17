@@ -1,4 +1,5 @@
-.grid {
+/* === NeuroGrid layout === */
+.neuro-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
@@ -9,17 +10,18 @@
 }
 
 @media (max-width: 900px) {
-    .grid {
+    .neuro-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 600px) {
-    .grid {
+    .neuro-grid {
         grid-template-columns: 1fr;
     }
 }
 
-.block {
+/* === NeuroBlock === */
+.neuro-block {
     background: rgba(0, 255, 255, 0.08);
     border: 1px solid rgba(0, 255, 255, 0.2);
     padding: 1rem;
@@ -32,30 +34,68 @@
     justify-content: space-between;
     height: 100%;
 }
-.block:hover {
+
+.neuro-block:hover {
     box-shadow: 0 0 12px #0ff4;
     transform: scale(1.01);
 }
-.block.active {
+
+.neuro-block.active {
     background: rgba(255, 255, 0, 0.2);
     box-shadow: 0 0 15px rgba(255, 255, 0, 0.4);
 }
-.block[data-size='wide'] {
+
+.neuro-block[data-size='wide'] {
     grid-column: span 2;
 }
-.block[data-size='full'] {
+
+.neuro-block[data-size='full'] {
     grid-column: span 3;
 }
 
 @media (max-width: 900px) {
-    .block[data-size='wide'],
-    .block[data-size='full'] {
+    .neuro-block[data-size='wide'],
+    .neuro-block[data-size='full'] {
         grid-column: span 2;
     }
 }
 @media (max-width: 600px) {
-    .block[data-size='wide'],
-    .block[data-size='full'] {
+    .neuro-block[data-size='wide'],
+    .neuro-block[data-size='full'] {
         grid-column: span 1;
     }
+}
+
+/* автозаполнение хвоста строки */
+.neuro-grid > .neuro-block:last-child:nth-child(3n + 1) {
+    grid-column: span 3;
+}
+
+/* === Mini grid (sublayout inside a block) === */
+.mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.mini {
+    background: rgba(0, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    color: cyan;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.2s ease;
+}
+
+.mini:hover {
+    background: rgba(0, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.mini.active {
+    background: rgba(255, 255, 0, 0.4);
+    color: black;
 }
