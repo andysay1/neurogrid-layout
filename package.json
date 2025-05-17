@@ -1,0 +1,26 @@
+{
+  "name": "neurogrid-layout",
+  "version": "1.0.0",
+  "description": "🧠 NeuroGrid — content-aware adaptive layout for React",
+  "main": "dist/neurogrid-layout.umd.cjs",
+  "module": "dist/neurogrid-layout.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["react", "grid", "adaptive", "layout", "masonry", "neural"],
+  "author": "Andrey Leo",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
