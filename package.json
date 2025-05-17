@@ -1,6 +1,6 @@
 {
     "name": "neurogrid-layout",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "🧠 NeuroGrid — content-aware adaptive layout for React",
     "main": "dist/neurogrid-layout.umd.cjs",
     "module": "dist/neurogrid-layout.js",
