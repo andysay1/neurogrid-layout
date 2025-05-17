@@ -1,36 +1,46 @@
 {
-  "name": "neurogrid-layout",
-  "version": "1.0.1",
-  "description": "🧠 NeuroGrid — content-aware adaptive layout for React",
-  "main": "dist/neurogrid-layout.umd.cjs",
-  "module": "dist/neurogrid-layout.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [
-    "react",
-    "grid",
-    "adaptive",
-    "layout",
-    "masonry",
-    "neural"
-  ],
-  "author": "Andrey Leo",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": ">=17",
-    "react-dom": ">=17"
-  },
-  "devDependencies": {
-    "@types/react": "^19.1.4",
-    "@types/react-dom": "^19.1.5",
-    "@vitejs/plugin-react": "^4.4.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.0.0"
-  }
+    "name": "neurogrid-layout",
+    "version": "1.0.1",
+    "description": "🧠 NeuroGrid — content-aware adaptive layout for React",
+    "main": "dist/neurogrid-layout.umd.cjs",
+    "module": "dist/neurogrid-layout.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/neurogrid-layout.es.js",
+            "require": "./dist/neurogrid-layout.umd.cjs",
+            "types": "./dist/index.d.ts"
+        },
+        "./dist/styles.css": {
+            "default": "./dist/styles.css"
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "keywords": [
+        "react",
+        "grid",
+        "adaptive",
+        "layout",
+        "masonry",
+        "neural"
+    ],
+    "author": "Andrey Leo",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": ">=17",
+        "react-dom": ">=17"
+    },
+    "devDependencies": {
+        "@types/react": "^19.1.4",
+        "@types/react-dom": "^19.1.5",
+        "@vitejs/plugin-react": "^4.4.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "vite": "^5.0.0",
+        "vite-plugin-dts": "^3.0.0"
+    }
 }
