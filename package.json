@@ -10,7 +10,14 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": ["react", "grid", "adaptive", "layout", "masonry", "neural"],
+  "keywords": [
+    "react",
+    "grid",
+    "adaptive",
+    "layout",
+    "masonry",
+    "neural"
+  ],
   "author": "Andrey Leo",
   "license": "MIT",
   "peerDependencies": {
@@ -18,9 +25,12 @@
     "react-dom": ">=17"
   },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.0.0",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.4.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0"
   }
 }

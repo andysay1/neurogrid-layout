@@ -1,12 +1,14 @@
-// NeuroGrid.jsx
 import React, { useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 import './styles.css';
 
-export const NeuroGrid = ({ children }) => {
-    const gridRef = useRef();
+export const NeuroGrid = ({ children }: { children: ReactNode }) => {
+    const gridRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        const blocks = [...gridRef.current.querySelectorAll('.block')];
+        if (!gridRef.current) return;
+
+        const blocks = Array.from(gridRef.current.querySelectorAll('.block')) as HTMLElement[];
 
         const autoAssignSize = () => {
             blocks.forEach((block) => {
@@ -21,7 +23,7 @@ export const NeuroGrid = ({ children }) => {
             });
         };
 
-        const spanOf = (el, cols) => (el.dataset.size === 'full' ? cols : el.dataset.size === 'wide' ? Math.min(2, cols) : 1);
+        const spanOf = (el: HTMLElement, cols: number) => (el.dataset.size === 'full' ? cols : el.dataset.size === 'wide' ? Math.min(2, cols) : 1);
 
         const fillGapsEverywhere = () => {
             let cols = window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
@@ -44,7 +46,7 @@ export const NeuroGrid = ({ children }) => {
             if (used) {
                 const leftover = cols - used;
                 const last = blocks.at(-1);
-                last.style.gridColumn = `span ${spanOf(last, cols) + leftover}`;
+                if (last) last.style.gridColumn = `span ${spanOf(last, cols) + leftover}`;
             }
         };
 
@@ -57,7 +59,7 @@ export const NeuroGrid = ({ children }) => {
             if (cols === 1 || used === 0) return;
             const leftover = cols - used;
             const last = blocks.at(-1);
-            last.style.gridColumn = `span ${spanOf(last, cols) + leftover}`;
+            if (last) last.style.gridColumn = `span ${spanOf(last, cols) + leftover}`;
         };
 
         const recalc = () => {
