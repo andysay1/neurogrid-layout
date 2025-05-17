@@ -12,9 +12,14 @@
             "types": "./dist/index.d.ts"
         },
         "./dist/styles.css": {
-            "default": "./dist/styles.css"
+            "default": "./dist/style.css"
         }
     },
+    "files": [
+        "dist",
+        "dist/style.css",
+        "src"
+    ],
     "scripts": {
         "dev": "vite",
         "build": "vite build",
