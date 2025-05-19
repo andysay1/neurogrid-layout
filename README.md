@@ -15,7 +15,7 @@ import { NeuroGrid } from 'neurogrid-layout';
 import 'neurogrid-layout/dist/styles.css';
 
 <NeuroGrid>
-    <div className='block'>Content</div>
-    <div className='block'>Another Block</div>
+    <div className='neuro-block'>Content</div>
+    <div className='neuro-block'>Another Block</div>
 </NeuroGrid>;
 ```
